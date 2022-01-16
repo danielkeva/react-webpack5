@@ -1,0 +1,24 @@
+{
+  "name": "react-webpack5",
+  "version": "1.0.0",
+  "description": "A zero boilerplate, highly scaleable React Webpack 5 configuration",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielkeva/react-webpack5.git"
+  },
+  "keywords": [
+    "webpack",
+    "5",
+    "react"
+  ],
+  "author": "Daniel Keva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielkeva/react-webpack5/issues"
+  },
+  "homepage": "https://github.com/danielkeva/react-webpack5#readme"
+}
