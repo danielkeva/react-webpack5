@@ -1,11 +1,9 @@
 const path = require('path')
-const { EnvironmentPlugin } = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin')
 const HtmlPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
-const WorkboxPlugin = require('workbox-webpack-plugin')
 
 module.exports = (_, { mode }) => {
   const production = mode === 'production'
@@ -87,14 +85,15 @@ module.exports = (_, { mode }) => {
       ]
     },
     plugins: [
-      new MiniCssExtractPlugin({ filename: 'css/[name].[contenthash].css' }),
+      new MiniCssExtractPlugin({ filename: 'css/[name].[contenthash:6].css' }),
       new ESLintPlugin(),
       new HtmlPlugin({ template: 'public/index.html' }),
       new CopyPlugin({
         patterns: [
           {
             from: 'public',
-            globOptions: { ignore: '**/index.html' }
+            globOptions: { ignore: '**/index.html' },
+            noErrorOnMissing: true
           }
         ]
       })
